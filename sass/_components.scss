@@ -293,8 +293,19 @@
   cursor: pointer;
   transition: all 0.2s;
 
+  & span{
+    margin-left: 3px;
+    transition: margin-left  .2s;
+  }
+
   &:hover {
     color: var(--color-grey-dark-1);
+
+    span{
+      // span nasıl kullanıldığına dikkat et
+
+      margin-left: 8px;
+    }
   }
 
   &:focus {
