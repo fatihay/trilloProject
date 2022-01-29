@@ -23,6 +23,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: $bp--smallest) {
+    flex-wrap: wrap;
+    // search bar kısmının alt satıra gelmesini sağlıyoruz, search bar genişletilmeli
+    height: 11rem;
+    align-content: space-around;
+
+  }
 }
 
 .content {
@@ -58,6 +66,10 @@
   @media only screen  and (max-width: $bp--medium) {
     padding: 3rem;
   }
+
+  @media only screen  and (max-width: $bp--small) {
+    flex-direction: column;
+  }
 }
 
 .description {
@@ -69,6 +81,11 @@
   @media only screen  and (max-width: $bp--medium) {
     padding: 2rem;
     margin-right: 3rem;
+  }
+
+  @media only screen  and (max-width: $bp--small) {
+    margin-right: 0rem;
+    margin-bottom: 3rem;
   }
 }
 
