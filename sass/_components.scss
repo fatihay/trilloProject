@@ -426,17 +426,24 @@
     margin-right: 0.7rem;
 
     // older browsers
-    // background-image: url(../img/chevron-thin-right.svg);
+    background-image: url(../img/chevron-thin-right.svg);
     // background-image color css'te değişmiyor
-    // background-size: cover;
+    background-size: cover;
     // burada svg elementlere farklı renk verilemiyor
     // webkit-mask olmadan yarım çıkıyor çünkü svg icon boyutu 1rem'den daha büyük
 
     // newer browsers - masks
-    background-color: var(--color-primary);
-    -webkit-mask-image: url(../img/chevron-thin-right.svg);
-    -webkit-mask-size: cover;
-    // background-image color css'te değişmiyor, webkit-mask ile bu sorun çözülüyor
+
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      // eğer destekliyorsa bunları kullan  ÇOK ÖNEMLİ
+      background-color: var(--color-primary);
+      -webkit-mask-image: url(../img/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      // background-image color css'te değişmiyor, webkit-mask ile bu sorun çözülüyor  
+
+      background-image: none;
+      // support durumunda backdround-image'nin de çalışmaması için..
+    } 
   }
 }
 
